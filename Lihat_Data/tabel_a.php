@@ -27,7 +27,7 @@
                     <td><?php echo $row["nohp"]?></td>
                     <td><?php echo $row["jeniskelamin"]?></td>
                     <td><?php echo $row["email"]?></td>
-                    <td><img src="/UTS/Registrasi/file/<?php echo $row["foto"];?>"width="192" height="109"></td>
+                    <td><img src="/UTS/Registrasi/file/<?php echo $row["foto"];?>"width="192" height="108"></td>
                 </tr>
             <?php } ?>
 
