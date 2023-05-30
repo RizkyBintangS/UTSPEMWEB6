@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" name="register" value="Daftar" >
+            <input type="submit" name="register" value="Daftar">
         </div>
         <div class="button">
           <a href="/UTS/Dashboard/dashboard.php">
@@ -68,7 +68,8 @@
   <?php
 
         error_reporting(0);
-       
+        $con = mysqli_connect("localhost","root","","uts");
+
         if(isset($_POST["register"])){
             $nama = $_POST["nama"];
             $tempatlahir = $_POST["tempatlahir"];
@@ -81,14 +82,17 @@
             $tempname = $_FILES["foto"]["tmp_name"];
             $folder = "file/".$foto;
             move_uploaded_file($tempname, $folder);
-
-            $con = mysqli_connect("localhost","root","","uts");
-
-            $query = "INSERT INTO seminar_a (nama, tempatlahir, tanggallahir, nohp, jeniskelamin, email, foto) 
-                    VALUES ('$nama', '$tempatlahir', '$tanggallahir', '$nohp', '$jeniskelamin', '$email', '$foto')";
-            mysqli_query($con,$query);
-            echo "<script> alert ('Sukses Memasukkan Data')</script>";
             
+            if($email = $_POST["email"]){
+
+                echo "<script>alert('Email Sudah Terdaftar')</script>";
+
+            }else{
+              $insert = "INSERT INTO seminar_a (nama, tempatlahir, tanggallahir, nohp, jeniskelamin, email, foto) 
+                    VALUES ('$nama', '$tempatlahir', '$tanggallahir', '$nohp', '$jeniskelamin', '$email', '$foto') ";
+              mysqli_query($con, $insert);
+              header('location: /UTS/Dashboard/dashboard.php');
+            }
         }
 ?>
 

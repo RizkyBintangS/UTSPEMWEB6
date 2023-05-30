@@ -45,6 +45,10 @@ nav .logo {
     cursor: pointer;
 }
 
+.logo-log {
+    text-align: right;
+}
+
 .logo .logo-name {
     color: #333;
     font-size: 22px;

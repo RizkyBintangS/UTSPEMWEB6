@@ -86,10 +86,7 @@
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = md5($_POST['password']);
     $cpass = md5($_POST['cpassword']);
-
-    $select = " SELECT * FROM login WHERE email = '$email' && password = '$pass' ";
-    $result = mysqli_query($conn, $select);
-
+    
     $u = "SELECT email FROM login WHERE email='$email'";
     $uu = mysqli_query($conn, $u);
     

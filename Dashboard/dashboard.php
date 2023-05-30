@@ -23,6 +23,9 @@ $(document).ready(function(){
         <div class="logo">
             <span class="logo-name">Daftar Kegiatan</span>
         </div>
+        <div class="logo-log">
+            <a href="/UTS/index.php" data-toggle="tooltip">Log Out<i class="bx bx-exit"></i></a>
+        </div>
     </nav>
     <section class="overlay"></section>
 

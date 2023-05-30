@@ -1,12 +1,18 @@
-<?php
+<html>
+    <head>
+        <title>Data Seminar C</title>
+        <link rel="stylesheet" href="tabel.css" />
+    </head>
+    <body>
+        <?php
         $db = new mysqli("localhost","root","","uts");
         $result = $db->query("SELECT * FROM seminar_c");
         $db->close();
 ?>
 
     <div id="TabelDataPendaftaran">
-        <table>
-            <tr bgcolor="white" style="text-align: center;">
+        <table class="table">
+            <tr class="tr">
                 <th rowspan="2">Nama</th>
                 <th colspan="2">Lahir</th>
                 <th rowspan="2">No Hp</th>
@@ -14,13 +20,13 @@
                 <th rowspan="2">Email</th>
                 <th rowspan="2">Foto</th>
             </tr>
-            <tr bgcolor="white" style="text-align: center;">
+            <tr class="tr">
                 <th>Tempat</th>
                 <th>Tanggal</th>
             </tr>
 
             <?php foreach($result as $row) { ?>
-                <tr class="teks" style="text-align: center;"> 
+                <tr class="tr"> 
                     <td><?php echo $row["nama"]?></td>
                     <td><?php echo $row["tempatlahir"]?></td>
                     <td><?php echo $row["tanggallahir"]?></td>
@@ -34,3 +40,5 @@
             <a href="/UTS/Dashboard/dashboard.php">Kembali</a>
         </table>
     </div>
+    </body>
+</html>

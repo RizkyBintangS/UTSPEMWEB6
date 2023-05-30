@@ -1,0 +1,15 @@
+.table {
+    margin: 9px; 
+    border: 1px; 
+    padding: 9px; 
+}
+
+.tr {
+    color: rgb(3, 71, 75);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font: bold;
+    text-align: center;
+    background-color: aqua;
+}
+
